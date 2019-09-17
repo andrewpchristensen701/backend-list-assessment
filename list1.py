@@ -25,8 +25,12 @@
 
 
 def match_ends(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+    stringlength = 0
+
+    for word in words:
+         if len(word) > 1 and word[0] == word[-1]:
+              stringlength +=1
+    return stringlength
 
 
 # B. front_x
@@ -37,8 +41,15 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+  x_list = []
+  other_list = []
+  for w in words:
+    if w.startswith('x'):
+      x_list.append(w)
+    else:
+      other_list.append(w)
+  return sorted(x_list) + sorted(other_list)
+
 
 
 # C. sort_last
@@ -47,9 +58,10 @@ def front_x(words):
 # e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
+def last(n): return n[-1]
 def sort_last(tuples):
-    """Your code goes here.  Edit this docstring."""
-    return
+    sortedlast = sorted(tuples,key=last)
+    return sortedlast
 
 
 # Simple provided test() function used in main() to print
